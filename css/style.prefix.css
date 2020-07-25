@@ -1,0 +1,213 @@
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 20px 0;
+  background: #6589f9;
+}
+
+.grid {
+  max-width: 960px;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: space-evenly;
+  -ms-flex-pack: space-evenly;
+  justify-content: space-evenly;
+}
+
+.card {
+  position: relative;
+  -webkit-transition: all 0.4s linear;
+  -o-transition: all 0.4s linear;
+  transition: all 0.4s linear;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  margin: 5px;
+}
+
+.card,
+.back,
+.front {
+  height: 130px;
+  width: 130px;
+}
+
+.back,
+.front {
+  position: absolute;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.front {
+  z-index: 2;
+  background: #fab942 url("../img/question.gif") no-repeat center center /
+    contain;
+}
+
+.back {
+  -webkit-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+  background-color: #6589f9;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.selected {
+  -webkit-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
+
+.match .front {
+  background: #6589f9 !important;
+}
+
+.main-score {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+  max-width: 70%;
+  margin: 0 auto;
+}
+.score,
+.time {
+  font-family: "Press Start 2P", sans-serif;
+  font-size: 1.7rem;
+  color: #fab942;
+  margin: 1rem;
+}
+
+.paused,
+.start,
+.scoreboard {
+  height: 100vh;
+  width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  font-family: "Press Start 2P", sans-serif;
+  font-size: 2rem;
+  text-align: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(224, 153, 22, 0.8);
+}
+
+.paused,
+.scoreboard {
+  display: none;
+}
+
+.paused {
+  background: #fefefe;
+}
+
+.scoreboard p {
+  color: #124dff;
+}
+
+.start {
+  background: #e52421;
+  color: white;
+}
+
+.start-btn:hover {
+  color: #124dff;
+}
+.start span,
+.scoreboard span {
+  color: #fefefe;
+  cursor: pointer;
+}
+
+.play-btn,
+.scoreboard span:hover {
+  text-decoration: underline;
+}
+
+.controls {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.social {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  position: fixed;
+  left: 20px;
+  bottom: 20px;
+  width: 0;
+  text-align: center;
+}
+
+.controls i {
+  margin: 1rem;
+  color: #fab942;
+  cursor: pointer;
+}
+
+.social i {
+  color: white;
+  margin: 0.3rem 0.3rem 0 0.3rem;
+}
+
+.social div {
+  text-align: center;
+}
+
+.social p {
+  font-size: 1rem;
+  padding: 10px;
+  color: #ffffff;
+  font-family: "Press Start 2P", sans-serif;
+}
+
+.fa:hover {
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+.scs {
+  display: flex;
+}
