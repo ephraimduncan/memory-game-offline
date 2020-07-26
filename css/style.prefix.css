@@ -94,6 +94,7 @@ body {
   top: 0;
   left: 0;
   background: rgba(224, 153, 22, 0.8);
+  pointer-events: auto;
 }
 .closed,
 .paused,

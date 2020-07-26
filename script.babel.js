@@ -133,13 +133,13 @@ const increaseScore = function increaseScore() {
 };
 
 const timer = function timer() {
-  timeLeft--;
   time.textContent = `Time Left: ${timeLeft}`;
+  timeLeft--;
 
   if (timeLeft < 0) {
     timeLeft = 0;
     gameOver.play();
-    setTimeout(() => (sb.style.display = "flex"), 200);
+    setTimeout(() => (sb.style.display = "flex"), 150);
     sb.innerHTML = `
       <h1> Game Over 😔</h1>
     	<p>You Scored: ${score}</p>
