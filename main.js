@@ -1,3 +1,8 @@
+const setupEvents = require("./installers/setupEvents");
+if (setupEvents.handleSquirrelEvent()) {
+  return;
+}
+
 const electron = require("electron");
 
 const { app, BrowserWindow } = require("electron");
