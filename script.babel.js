@@ -59,20 +59,23 @@ const delay = 1200;
 let score = 0;
 let timeLeft = 60;
 let isPaused = false;
-var start = true;
 
 const game = document.getElementById("game");
 const grid = document.createElement("section");
 const scoreboard = document.querySelector(".score");
 const time = document.querySelector(".time");
 const sb = document.querySelector(".scoreboard");
-var start = document.querySelector(".start");
+const start = document.querySelector(".start");
 const startBtn = document.querySelector(".start-btn");
 const pauseBtn = document.querySelector(".pause-btn");
 const playBtn = document.querySelector(".play-btn");
+const closeBtn = document.querySelector(".close-btn");
 const paused = document.querySelector(".paused");
+const closed = document.querySelector(".closed");
 const btns = document.querySelectorAll(".click");
 const icons = document.querySelectorAll(".social a");
+const confirmClose = document.querySelector(".yes");
+const denyClose = document.querySelector(".no");
 
 const intro = new Audio("./audio/intro.mp3");
 const gamePlay = new Audio("./audio/gameplay.mp3");
@@ -130,13 +133,13 @@ const increaseScore = function increaseScore() {
 };
 
 const timer = function timer() {
-  time.textContent = `Time Left: ${timeLeft}`;
   timeLeft--;
+  time.textContent = `Time Left: ${timeLeft}`;
 
   if (timeLeft < 0) {
     timeLeft = 0;
     gameOver.play();
-    setTimeout(() => (sb.style.display = "flex"), 500);
+    setTimeout(() => (sb.style.display = "flex"), 200);
     sb.innerHTML = `
       <h1> Game Over 😔</h1>
     	<p>You Scored: ${score}</p>
@@ -151,7 +154,7 @@ const timer = function timer() {
   }
 
   if (score === 12) {
-    setTimeout(() => (sb.style.display = "flex"), 500);
+    setTimeout(() => (sb.style.display = "flex"), 200);
     completed.play();
     gamePlay.pause();
     sb.innerHTML = `
@@ -162,18 +165,34 @@ const timer = function timer() {
   }
 };
 
-const pauseGame = function pauseGame() {
+const pauseGame = () => {
   pauseMenu.play();
+  pauseMenu.loop = true;
   gamePlay.pause();
   isPaused = true;
   paused.style.display = "flex";
 };
 
-const playGame = function playGame() {
+const playGame = () => {
   pauseMenu.pause();
   gamePlay.play();
   isPaused = false;
   paused.style.display = "none";
+};
+
+const closedPause = () => {
+  pauseMenu.play();
+  pauseMenu.loop = true;
+  gamePlay.pause();
+  isPaused = true;
+  closed.style.display = "flex";
+};
+
+const closedPlay = () => {
+  pauseMenu.pause();
+  gamePlay.play();
+  isPaused = false;
+  closed.style.display = "none";
 };
 
 grid.addEventListener("click", ({ target }) => {
@@ -193,11 +212,9 @@ grid.addEventListener("click", ({ target }) => {
 
     if (count === 1) {
       firstGuess = clicked.parentNode.dataset.name;
-      console.log(firstGuess);
       clicked.parentNode.classList.add("selected");
     } else {
       secondGuess = clicked.parentNode.dataset.name;
-      console.log(secondGuess);
       clicked.parentNode.classList.add("selected");
     }
 
@@ -227,6 +244,10 @@ icons.forEach((icon) => icon.addEventListener("click", pauseGame));
 
 pauseBtn.addEventListener("click", pauseGame);
 playBtn.addEventListener("click", playGame);
+
+closeBtn.addEventListener("click", closedPause);
+confirmClose.addEventListener("click", () => window.close());
+denyClose.addEventListener("click", closedPlay);
 
 startBtn.addEventListener("click", () => {
   setInterval(() => {

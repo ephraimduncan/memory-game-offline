@@ -1,7 +1,6 @@
 *,
 *::before,
 *::after {
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   user-select: none;
 }
@@ -14,22 +13,14 @@ body {
 .grid {
   max-width: 960px;
   margin: 0 auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  -webkit-box-pack: space-evenly;
-  -ms-flex-pack: space-evenly;
   justify-content: space-evenly;
 }
 
 .card {
   position: relative;
-  -webkit-transition: all 0.4s linear;
-  -o-transition: all 0.4s linear;
   transition: all 0.4s linear;
-  -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
   margin: 5px;
 }
@@ -44,7 +35,6 @@ body {
 .back,
 .front {
   position: absolute;
-  -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
 }
 
@@ -55,7 +45,6 @@ body {
 }
 
 .back {
-  -webkit-transform: rotateY(180deg);
   transform: rotateY(180deg);
   background-color: #6589f9;
   background-size: contain;
@@ -64,7 +53,6 @@ body {
 }
 
 .selected {
-  -webkit-transform: rotateY(180deg);
   transform: rotateY(180deg);
 }
 
@@ -76,11 +64,7 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
   justify-content: space-between;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   text-align: center;
   max-width: 70%;
@@ -93,24 +77,15 @@ body {
   color: #fab942;
   margin: 1rem;
 }
-
+.closed,
 .paused,
 .start,
 .scoreboard {
   height: 100vh;
   width: 100vw;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
   justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   font-family: "Press Start 2P", sans-serif;
   font-size: 2rem;
@@ -120,7 +95,7 @@ body {
   left: 0;
   background: rgba(224, 153, 22, 0.8);
 }
-
+.closed,
 .paused,
 .scoreboard {
   display: none;
@@ -142,6 +117,7 @@ body {
 .start-btn:hover {
   color: #124dff;
 }
+.closed,
 .start span,
 .scoreboard span {
   color: #fefefe;
@@ -157,22 +133,12 @@ body {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
 .social {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
   flex-direction: column;
   position: fixed;
   left: 20px;
@@ -204,11 +170,21 @@ body {
 }
 
 .fa:hover {
-  -webkit-transform: scale(1.1);
-  -ms-transform: scale(1.1);
   transform: scale(1.1);
 }
 
 .scs {
   display: flex;
+}
+
+.toad {
+  width: 20%;
+}
+
+.yes {
+  color: #00ff62;
+}
+
+.no {
+  color: #e52421;
 }

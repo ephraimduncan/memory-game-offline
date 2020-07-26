@@ -41,11 +41,7 @@
     <div id="game"></div>
     <div class="scoreboard"></div>
     <div class="controls">
-      <i
-        class="fa fa-times fa-3x"
-        aria-hidden="true"
-        onclick="window.close()"
-      ></i>
+      <i class="fa fa-times fa-3x click close-btn" aria-hidden="true"></i>
       <i class="fa fa-pause fa-3x pause-btn click" aria-hidden="true"></i>
       <i
         class="fa fa-refresh fa-3x click"
@@ -58,6 +54,14 @@
       <p>Paused</p>
       <span class="play-btn">
         <i class="fa fa-play click" aria-hidden="true"></i>
+      </span>
+    </div>
+    <div class="closed">
+      <img src="./img/toad-close.png" alt="" class="toad" />
+      <p>Are you sure?</p>
+      <span class="confirm">
+        <i class="fa fa-check click yes" aria-hidden="true"></i>
+        <i class="fa fa-times click no" aria-hidden="true"></i>
       </span>
     </div>
     <div class="social">
