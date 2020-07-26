@@ -6,12 +6,12 @@
   "main": "main.js",
   "scripts": {
     "start": "electron .",
-    "package-mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --icon=assets/icons/mac/icon.icns --prune=true --out=release-builds",
-    "package-win": "electron-packager . --overwrite --asar=true --platform=win32 --arch=ia32 --icon=assets/icons/win/icon.ico --prune=true --out=release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"Super Mario Memory Game\"",
-    "package-win64": "electron-packager . --overwrite --asar=true --platform=win32 --arch=x64 --icon=assets/icons/win/icon.ico --prune=true --out=release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"Super Mario Memory Game\"",
-    "package-linux": "electron-packager . --overwrite --asar=true --platform=linux --arch=x64 --icon=assets/icons/png/icon.png --prune=true --out=release-builds",
+    "package-mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --icon=assets/icons/mac/icon.icns --prune=true --out=build",
+    "package-win": "electron-packager . --overwrite --asar=true --platform=win32 --arch=ia32 --icon=assets/icons/win/icon.ico --prune=true --out=build --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"Super Mario Memory Game\"",
+    "package-win64": "electron-packager . --overwrite --asar=true --platform=win32 --arch=x64 --icon=assets/icons/win/icon.ico --prune=true --out=build --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"Super Mario Memory Game\"",
+    "package-linux": "electron-packager . --overwrite --asar=true --platform=linux --arch=x64 --icon=assets/icons/png/icon.png --prune=true --out=build",
     "build": "npm run package-win && npm run package-mac && npm run package-linux",
-    "imac": "electron-installer-dmg ./release-builds/Super\\ Mario\\ Memory\\ Game-darwin-x64/Electron\\ tutorial\\ app.app  --out=release-builds --overwrite --icon=assets/icons/mac/icon.icns",
+    "imac": "electron-installer-dmg ./build/Super\\ Mario\\ Memory\\ Game-darwin-x64/Electron\\ tutorial\\ app.app  --out=build --overwrite --icon=assets/icons/mac/icon.icns",
     "iwin": "node installers/windows/createInstaller.js",
     "build:installers": "npm run iwin && npm run imac"
   },
