@@ -19,7 +19,7 @@ function getInstallerConfig() {
     authors: "Ephraim Atta-Duncan",
     noMsi: true,
     outputDirectory: path.join(outPath, "windows-installer"),
-    exe: "mario-memory-game.exe",
+    exe: "Super Mario Memory Game.exe",
     setupExe: "SuperMarioMemoryGameInstaller.exe",
     setupIcon: path.join(rootPath, "assets", "icons", "win", "icon.ico"),
   });

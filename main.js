@@ -13,6 +13,7 @@ process.env.NODE_ENV = "production";
 function createWindow() {
   const win = new BrowserWindow({
     frame: false,
+    show: false,
     webPreferences: {
       nodeIntegration: true,
     },
@@ -20,6 +21,7 @@ function createWindow() {
 
   win.loadFile("index.html");
   win.maximize();
+  win.show();
   // win.webContents.openDevTools();
 }
 
