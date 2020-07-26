@@ -2,6 +2,9 @@ const electron = require("electron");
 
 const { app, BrowserWindow } = require("electron");
 
+// SET ENV FOR PRODUCTION
+process.env.NODE_ENV = "production";
+
 function createWindow() {
   const win = new BrowserWindow({
     frame: false,
