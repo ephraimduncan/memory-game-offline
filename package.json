@@ -31,7 +31,7 @@
         {
           "name": "@electron-forge/maker-squirrel",
           "config": {
-            "name": "Super Mario Memory Game"
+            "name": "SuperMarioMemoryGame"
           }
         },
         {
